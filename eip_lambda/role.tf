@@ -1,5 +1,9 @@
 module "iam_role" {
   source = "../../identity_and_access_management/iam_role"
+  #Prior changes check with Andrew if this call the dreamline-modules/identify_and_access_management/iam_role/
+  #Or the technative/terraform-aws-module-iam-role, because the source below, is for the latter.
+  #To-do: update "X" below with the new commit ref when is merged, and cleanup old reference above.
+  #source = "git@github.com:wearetechnative/terraform-aws-iam-role?ref=X"
 
   role_name = var.name
   role_path = "/${var.module_resource_name_prefix}/"

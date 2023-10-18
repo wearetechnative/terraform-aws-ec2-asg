@@ -2,6 +2,8 @@
 
 module "lambda" {
   source = "../../lambda/"
+  #To-do: update "X" below with the new commit ref when is merged, and cleanup old reference above.
+  #source = "git@github.com:wearetechnative/terraform-aws-lambda?ref=X"
 
   name = var.name
   role_arn = module.iam_role.role_arn
