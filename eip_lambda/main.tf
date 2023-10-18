@@ -12,6 +12,7 @@ module "lambda" {
   source_directory_location = "${path.module}/source"
   source_file_name = null
 
+  sqs_dlq_arn = var.sqs_dlq_arn
   kms_key_arn = var.kms_key_arn
   memory_size = 128
   timeout = 10

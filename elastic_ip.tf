@@ -16,7 +16,7 @@ module "eip_lambda" {
 resource "aws_eip" "this" {
   count = var.use_floating_ip && var.own_eip_for_floaing_ip == null ? 1 : 0
 
-  vpc = true
+  domain = "vpc"
 
   tags = {
     "Name" = local.module_resource_name
