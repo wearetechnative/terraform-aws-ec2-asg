@@ -6,7 +6,7 @@ resource "aws_iam_instance_profile" "this" {
 module "iam_role" {
   count = var.instance_role_name == null ? 1 : 0
 
-  source = "git@github.com:wearetechnative/terraform-aws-iam-role?ref=9a975f62956b6c4f2593c169d06d1cfe8aad36be"
+  source = "git@github.com:wearetechnative/terraform-aws-iam-role"
 
   role_name = local.module_resource_name
   role_path = "/${local.module_resource_name_prefix}/"
