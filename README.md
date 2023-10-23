@@ -42,7 +42,7 @@ Currently no known solution other than deleting and recreating the ASG.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_eip_lambda"></a> [eip\_lambda](#module\_eip\_lambda) | ./eip_lambda | n/a |
-| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git@github.com:wearetechnative/terraform-aws-iam-role | n/a |
+| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git@github.com:wearetechnative/terraform-aws-iam-role | 0fe916c27097706237692122e09f323f55e8237e |
 
 ## Resources
 
