@@ -30,7 +30,6 @@ Do not use `terraform-aws-ec2-asg` if:
 Sometimes you receive the following error:
 
 ```
-╷
 │ Error: creating Auto Scaling Group (ec2-asg-website_stack_dev-eu-central-1b): ValidationError: ARN specified for Service-Linked Role does not exist.
 │       status code: 400, request id: 3dcf1ff4-d46f-4724-9586-f1e4957b5dd4
 │
@@ -40,7 +39,6 @@ Sometimes you receive the following error:
 ```
 
 Run `terraform apply` again. This is because of a race condition in AWS.
-
 
 ### Initial lifecycle hooks are not updated in ASG when changed.
 
