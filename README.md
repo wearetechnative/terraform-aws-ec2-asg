@@ -1,33 +1,50 @@
-# ec2_asg
+# Terraform AWS EC2 ASG
 
-Use ec2_asg if:
-- You need to provide a fail-over setup with one EC2 (i.e. the initial use of ec2_asg).
-  - Generally used with `use_floating_ip = true` to host applications that are not Dockerized. An EIP will be used and floats to another EC2 instance if the current instance fails.
+This module implements an EC2 Auto Scaling Group
+
+[![](we-are-technative.png)](https://www.technative.nl)
+
+## When to use terraform-aws-ec2-asg
+
+Use `terraform-aws-ec2-asg` if:
+
+- You need to provide a fail-over setup with one EC2 (i.e. the initial use of terraform-aws-ec2-asg).
+  - Generally used with `use_floating_ip = true` to host applications that are
+    not Dockerized. An EIP will be used and floats to another EC2 instance if
+    the current instance fails.
   - Also used for setting up reliable Bastion hosts.
 - You need to provide compute resources for ECS clusters.
 
-Do not use ec2_asg if:
+Do not use `terraform-aws-ec2-asg` if:
+
 - If you need to provision EC2 instances for EKS, we have `eks_custom_nodegroup` for this. (Altough we should/could refactor the `ec2_asg` module for use with EKS as well...) or at least use it in `eks_custom_nodegroup`.
 
-Todo: Implement spot instance functionality in launch_template.
+## Todo
 
-Known issues:
-- Sometimes you receive:
+- Implement spot instance functionality in `launch_template`.
+
+## Troubleshooting / Known issues
+
+### ARN specified for Service-Linked Role does not exist
+
+Sometimes you receive the following error:
+
+```
 ╷
 │ Error: creating Auto Scaling Group (ec2-asg-website_stack_dev-eu-central-1b): ValidationError: ARN specified for Service-Linked Role does not exist.
 │       status code: 400, request id: 3dcf1ff4-d46f-4724-9586-f1e4957b5dd4
-│ 
+│
 │   with module.network_compute.module.network.module.nat_instances["eu-central-1b"].module.ec2_asg.aws_autoscaling_group.this,
 │   on ../../modules/ec2_asg/autoscaling_group.tf line 16, in resource "aws_autoscaling_group" "this":
 │   16: resource "aws_autoscaling_group" "this" {
-│ 
-╵
+```
 
-Try again. This is because of a race condition in AWS.
+Run `terraform apply` again. This is because of a race condition in AWS.
 
-- Initial lifecycle hooks are not updated in ASG when changed.
 
-Currently no known solution other than deleting and recreating the ASG.
+### Initial lifecycle hooks are not updated in ASG when changed.
+
+We currently do not know a solution other than deleting and recreating the ASG.
 
 <!-- BEGIN_TF_DOCS -->
 ## Providers
