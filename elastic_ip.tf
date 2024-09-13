@@ -14,7 +14,7 @@ module "eip_lambda" {
 }
 
 resource "aws_eip" "this" {
-  count = var.use_floating_ip && var.own_eip_for_floaing_ip == null ? 1 : 0
+  count = var.use_floating_ip && var.own_eip_for_floating_ip == null ? 1 : 0
 
   domain = "vpc"
 
@@ -24,9 +24,9 @@ resource "aws_eip" "this" {
 }
 
 data "aws_eip" "own_eip" {
-  count = var.use_floating_ip && var.own_eip_for_floaing_ip != null ? 1 : 0
+  count = var.use_floating_ip && var.own_eip_for_floating_ip != null ? 1 : 0
 
-  id = var.own_eip_for_floaing_ip
+  id = var.own_eip_for_floating_ip
 }
 
 resource "aws_ssm_parameter" "public-ip" {

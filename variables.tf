@@ -73,12 +73,12 @@ variable "use_public_ip" {
 }
 
 variable "use_floating_ip" {
-  description = "Use floating IP for standard endpoint entry."
+  description = "Use an Elastic IP for standard endpoint entry."
   type = bool
   default = true
 }
 
-variable "own_eip_for_floaing_ip" {
+variable "own_eip_for_floating_ip" {
   description = "Optionally own EIP if floating IP is set to true."
   type = string
   default = null

@@ -100,4 +100,6 @@ resource "aws_autoscaling_group" "this" {
   lifecycle {
     ignore_changes = [desired_capacity, max_size, min_size]
   }
+
+  depends_on = [aws_iam_service_linked_role.this]
 }
