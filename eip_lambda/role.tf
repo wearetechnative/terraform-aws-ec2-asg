@@ -1,5 +1,5 @@
 module "iam_role" {
-  source = "https://github.com/wearetechnative/terraform-aws-iam-role?ref=0fe916c27097706237692122e09f323f55e8237e"
+  source = "git@github.com:wearetechnative/terraform-aws-iam-role?ref=0fe916c27097706237692122e09f323f55e8237e"
 
   role_name = var.name
   role_path = "/${var.module_resource_name_prefix}/"
