@@ -20,7 +20,7 @@ resource "aws_autoscaling_group" "this" {
   wait_for_capacity_timeout = 0 # disabled to prevent issues with policies depending on asg arn
 
   desired_capacity  = var.initial_amount_of_pods
-  desiredCapacityType = "units"
+  desired_capacity_type = var.desired_capacity_type
   max_size = var.initial_amount_of_pods
   min_size = var.initial_amount_of_pods
 

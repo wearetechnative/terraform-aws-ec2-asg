@@ -9,6 +9,12 @@ variable "initial_amount_of_pods" {
   default = 0
 }
 
+variable "desired_capacity_type" {
+  description = "The unit of measurement for the value specified for desired_capacity. Supported for attribute-based instance type selection only."
+  type = string
+  default = "units"
+}
+
 variable "ec2_ami_name_filter_list" {
   description = "Optional regex value to filter the AMI image. Most recently is used. Only AMIs with root device EBS and virtualization type HVM are currently allowed. Default is Ubuntu."
   type        = list(string)
