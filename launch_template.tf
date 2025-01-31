@@ -42,6 +42,8 @@ resource "aws_launch_template" "this" {
     http_tokens = "required"
   }
 
+  key_name = var.key_name
+
   update_default_version = true
   user_data = base64encode(join("", [var.user_data_completion_hook ? join("", [coalesce(var.user_data, "## none"), <<EOT
 

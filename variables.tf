@@ -107,6 +107,11 @@ variable "kms_key_arn" {
   type        = string
 }
 
+variable "key_name" {
+  description = "The key name to use for the instance."
+  type        = string
+}
+
 variable "additional_tags" {
   description = "Additional tags on the ASG that will be propagated to the hosts. Useful for EKS & Systems Manager state management. Always propagated to EC2 instances."
   type        = map(string)
