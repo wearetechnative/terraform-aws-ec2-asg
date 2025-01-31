@@ -110,6 +110,7 @@ variable "kms_key_arn" {
 variable "key_name" {
   description = "The key name to use for the instance."
   type        = string
+  default     = null
 }
 
 variable "additional_tags" {
