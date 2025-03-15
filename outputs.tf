@@ -13,3 +13,11 @@ output "autoscaling_group_name" {
 output "autoscaling_group_arn" {
   value = aws_autoscaling_group.this.arn
 }
+
+output "autoscaling_group_service_role_arn" {
+  value = aws_iam_service_linked_role.this.arn
+}
+
+output "autoscaling_group_service_role_id" {
+  value = aws_iam_service_linked_role.this.id
+}
