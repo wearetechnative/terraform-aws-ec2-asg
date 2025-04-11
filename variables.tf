@@ -3,6 +3,11 @@ variable "name" {
   type        = string
 }
 
+variable "use_fixed_name" {
+  description = "Use a fixed name for the ASG instead of appending suffixes."
+  type        = bool
+}
+
 variable "initial_amount_of_pods" {
   description = "Initial amount of pods to set when the ASG is (re)created."
   type = number
