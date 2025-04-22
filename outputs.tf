@@ -23,5 +23,5 @@ output "autoscaling_group_service_role_id" {
 }
 
 output "autoscaling_group_iam_role_id" {
-  value = module.iam_role[0].role_arn
+  value = length(module.iam_role[0].role_arn) > 0 ? module.iam_role[0].role_arn : ""
 }
