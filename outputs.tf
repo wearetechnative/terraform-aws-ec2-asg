@@ -21,3 +21,7 @@ output "autoscaling_group_service_role_arn" {
 output "autoscaling_group_service_role_id" {
   value = aws_iam_service_linked_role.this.id
 }
+
+output "autoscaling_group_iam_role_id" {
+  value = length(module.iam_role[0].role_arn) > 0 ? module.iam_role[0].role_arn : ""
+}
