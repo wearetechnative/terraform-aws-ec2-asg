@@ -11,7 +11,7 @@ module "iam_role" {
   role_name = local.module_resource_name
   role_path = "/${local.module_resource_name_prefix}/"
 
-  aws_managed_policies = ["AmazonSSMManagedInstanceCore"]
+  aws_managed_policies = ["AmazonSSMManagedInstanceCore","CloudWatchAgentServerPolicy"]
 
   trust_relationship = {
     "ec2" : { "identifier" : "ec2.amazonaws.com", "identifier_type" : "Service", "enforce_mfa" : false, "enforce_userprincipal" : false, "external_id" : null, "prevent_account_confuseddeputy" : false }
