@@ -16,7 +16,7 @@ module "lambda" {
   kms_key_arn = var.kms_key_arn
   memory_size = 128
   timeout = 10
-  runtime = "python3.9"
+  runtime = "python3.13"
 }
 
 resource "aws_lambda_function_event_invoke_config" "dlq" {
