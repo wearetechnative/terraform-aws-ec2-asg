@@ -1,4 +1,4 @@
-# Terraform AWS EC2 ASG
+# Terraform AWS EC2 ASG ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-ec2-asg/lint.yaml?branch=main&style=plastic&label=lint) ![](https://img.shields.io/github/actions/workflow/status/wearetechnative/terraform-aws-ec2-asg/security-scan.yaml?branch=main&style=plastic&label=security)
 
 This module implements an EC2 Auto Scaling Group
 
